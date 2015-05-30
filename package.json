@@ -1,0 +1,16 @@
+{
+  "name": "cfaChallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Devin Liu",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.0.0",
+    "express": "^4.12.4",
+    "http": "0.0.0"
+  }
+}

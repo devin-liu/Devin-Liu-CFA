@@ -1,0 +1,337 @@
+<html>
+<head>
+    <title>Devin Liu's CFA Challenge</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+    <body>
+        <div class="site-header-bar">
+            <div class="site-header-title-container">
+                <p class="site-title">
+                    Oakland City
+                </p>
+            </div>
+        </div>
+
+        <div class="site-body-container">
+
+            <div class="site-sidebar">
+                <div class="map-divider-container map-divider-population">
+                    
+                    
+                    <div class="map-divider-housing-hover">
+                        <p style="position: absolute;top: 62px;padding: 48px;text-align: center;color: white;">
+                            Click to see Population Density
+                        </p>
+                    </div>
+                    
+                    <p class="site-sidebar-title">
+                        Population Density
+                    </p>
+                    <p class="site-sidebar-title-sub">
+                        x(1000/sq.km)
+                    </p>
+
+
+                    <div class="map-divider button-density-10">
+                        <p class="map-divider-density-info">
+                        10 >=
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-9">
+                        <p class="map-divider-density-info">
+                        9
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-8">
+                        <p class="map-divider-density-info">
+                        8
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-7">
+                        <p class="map-divider-density-info">
+                        7
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-6">
+                        <p class="map-divider-density-info">
+                        6
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-5">
+                        <p class="map-divider-density-info">
+                        5
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-4">
+                        <p class="map-divider-density-info">
+                        4
+                        </p>
+                    </div>
+
+                    
+
+                    <div class="map-divider button-density-3">
+                        <p class="map-divider-density-info">
+                        3
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-2">
+                        <p class="map-divider-density-info">
+                        2
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-1">
+                        <p class="map-divider-density-info">
+                        1
+                        </p>
+                    </div>
+
+                
+
+                    <div class="map-divider button-density-0">
+                        <p class="map-divider-density-info">
+                        0
+                        </p>
+                    </div>
+                    
+                </div>
+
+
+                <div class="map-divider-container map-divider-housing">
+
+
+                    <div class="map-divider-population-hover">
+                        <p style="position: absolute;top: 62px;padding: 48px;text-align: center;color: white;">
+                            Click to see Housing Density
+                        </p>
+                    </div>
+
+
+                    <p class="site-sidebar-title">
+                        Housing Density
+                    </p>
+                    <p class="site-sidebar-title-sub">
+                        x(1000/sq.km)
+                    </p>
+
+
+                    <div class="map-divider button-density-10">
+                        <p class="map-divider-density-info">
+                        10 >=
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-9">
+                        <p class="map-divider-density-info">
+                        9
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-8">
+                        <p class="map-divider-density-info">
+                        8
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-7">
+                        <p class="map-divider-density-info">
+                        7
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-6">
+                        <p class="map-divider-density-info">
+                        6
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-5">
+                        <p class="map-divider-density-info">
+                        5
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-4">
+                        <p class="map-divider-density-info">
+                        4
+                        </p>
+                    </div>
+
+                    
+
+                    <div class="map-divider button-density-3">
+                        <p class="map-divider-density-info">
+                        3
+                        </p>
+                    </div>
+
+                    <div class="map-divider button-density-2">
+                        <p class="map-divider-density-info">
+                        2
+                        </p>
+                    </div>
+
+
+                    <div class="map-divider button-density-1">
+                        <p class="map-divider-density-info">
+                        1
+                        </p>
+                    </div>
+
+                
+
+                    <div class="map-divider button-density-0">
+                        <p class="map-divider-density-info">
+                        0
+                        </p>
+                    </div>
+                    
+                <!-- </div> -->
+
+            </div>
+
+            <div class="site-body">
+                <!-- <div id="container" style="position: relative; width: 680px; height: 400px;"></div> -->
+            </div>
+
+        </div>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>        
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <script>
+
+            $('.map-divider-housing').css('opacity', 0.4)
+            $('.map-divider-housing-hover').hide()
+
+            var projection = d3.geo.mercator()
+                                   // .translate([w/2, h/2])
+                                   .scale([150000]);
+
+
+            var path = d3.geo.path()
+                             .projection(projection);
+
+
+            var svg = d3.select(".site-body")
+                        .append("svg")
+                        .attr("width", "100%")
+                        .attr("height", "100%");
+                        
+
+            $('.map-divider-population-hover').on('click', function() {
+
+                $('svg').remove()
+                $('.map-divider-population').css('opacity', 0.4)
+                $('.map-divider-housing').css('opacity', 1)
+                $('.map-divider-population-hover').hide()
+                $('.map-divider-housing-hover').show()
+
+
+                var projection = d3.geo.mercator()
+                                   // .translate([w/2, h/2])
+                                   .scale([150000]);
+
+
+                var path = d3.geo.path()
+                                 .projection(projection);
+
+
+                var svg = d3.select(".site-body")
+                            .append("svg")
+                            .attr("width", "100%")
+                            .attr("height", "100%");
+
+                
+
+                d3.json("js/oakland-parse.json", function(json) {
+                console.log(json.features[0])
+                svg.selectAll("path")
+                   .data(json.features)
+                   .enter()
+                   .append("path")
+                   .attr("d", path)
+                   .attr("class", function(d) { 
+                        // return d.properties['DENSITY_CLASS'] 
+                        return d.properties.HOUSING_DENSITY_CLASS; 
+                    })
+                   .attr("transform", "translate(319900,107090)")
+                });
+                
+            })
+
+            $('.map-divider-housing-hover').on('click', function() {
+
+                $('svg').remove()
+                $('.map-divider-housing').css('opacity', 0.4)
+                $('.map-divider-population').css('opacity', 1)
+                $('.map-divider-housing-hover').hide()
+                $('.map-divider-population-hover').show()
+
+
+                var projection = d3.geo.mercator()
+                                   // .translate([w/2, h/2])
+                                   .scale([150000]);
+
+
+                var path = d3.geo.path()
+                                 .projection(projection);
+
+
+                var svg = d3.select(".site-body")
+                            .append("svg")
+                            .attr("width", "100%")
+                            .attr("height", "100%");
+
+
+                d3.json("js/oakland-parse.json", function(json) {
+                console.log(json.features[0])
+                svg.selectAll("path")
+                   .data(json.features)
+                   .enter()
+                   .append("path")
+                   .attr("d", path)
+                   .attr("class", function(d) { 
+                        return d.properties['DENSITY_CLASS'] 
+                        // + ' ' + d.properties.HOUSING_DENSITY_CLASS; 
+                    })
+                   .attr("transform", "translate(319900,107090)")
+               });
+            })
+
+
+
+
+            d3.json("js/oakland-parse.json", function(json) {
+                console.log(json.features[0])
+                svg.selectAll("path")
+                   .data(json.features)
+                   .enter()
+                   .append("path")
+                   .attr("d", path)
+                   .attr("class", function(d) { 
+                        return d.properties['DENSITY_CLASS'] 
+                        // + ' ' + d.properties.HOUSING_DENSITY_CLASS; 
+                    })
+                   .attr("transform", "translate(319900,107090)")
+            });
+
+
+        </script>
+    </body>
+</html>
